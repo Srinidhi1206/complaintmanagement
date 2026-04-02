@@ -1,0 +1,67 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #3b82f6;
+  --primary-glow: rgba(59, 130, 246, 0.4);
+  --accent: #10b981;
+  --bg-dark: #09090b;
+  --glass: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+@theme {
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-200: #bfdbfe;
+  --color-primary-300: #93c5fd;
+  --color-primary-400: #60a5fa;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-700: #1d4ed8;
+  --color-primary-800: #1e40af;
+  --color-primary-900: #1e3a8a;
+  --color-primary-950: #172554;
+  
+  --color-accent: #10b981;
+}
+
+body {
+  @apply bg-[#09090b] text-zinc-300 selection:bg-primary-500/30 selection:text-white antialiased;
+  font-family: 'Inter', sans-serif;
+}
+
+.glass-panel {
+  @apply bg-white/[0.03] backdrop-blur-3xl border border-white/10;
+}
+
+.glass-card {
+  @apply bg-white/[0.02] backdrop-blur-xl border border-white/5 hover:border-white/10 transition-all duration-300;
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full hover:bg-white/20 transition-all;
+}
+
+/* Leaflet Fixes */
+.leaflet-container {
+    filter: invert(100%) hue-rotate(180deg) brightness(95%) contrast(90%);
+}
+
+.custom-popup .leaflet-popup-content-wrapper {
+    background-color: rgba(24, 24, 27, 0.9) !important;
+    backdrop-filter: blur(12px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    color: white !important;
+    border-radius: 1rem !important;
+    padding: 0.5rem !important;
+}
+
+.custom-popup .leaflet-popup-tip {
+    background-color: rgba(24, 24, 27, 0.9) !important;
+}
